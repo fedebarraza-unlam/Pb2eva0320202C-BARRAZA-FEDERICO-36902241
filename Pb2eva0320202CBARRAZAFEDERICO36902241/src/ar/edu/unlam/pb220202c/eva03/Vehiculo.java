@@ -53,6 +53,11 @@ public class Vehiculo implements Imultable, Comparable<Vehiculo> {
 	}
 
 	@Override
+	public int hashCode() {
+		return this.getPatente().hashCode() * this.getLimiteVelocidad().hashCode() * 32;
+	}
+
+	@Override
 	public Boolean enInfraccion() {
 		return this.getVelocidadActual() >= this.getLimiteVelocidad();
 	}
